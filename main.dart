@@ -24,6 +24,7 @@ String op = prompt(
 
 // conditional statements for checking the operations
 // which user want to perform
+ /*
  if (op == '+'){
  print('The summation is: ${num1 + num2}');
  }
@@ -34,9 +35,27 @@ String op = prompt(
  print('The Multiplication is: ${num1 * num2}');
  }
  else if(op == '/'){
- print('The division is: ${num1 / num2}');
+ print('The division is: ${num1 / num2}');  */
+
+ // We can also do this if part here with switch statements 
+ switch(op){
+ case '+':
+ print('The Addition is: ${num1 + num2}');
+ break;
+ case '-':
+ print('The Subtraction is: ${num1 - num2}');
+ break;
+ case '*':
+ print('The Multiplication is: ${num1 * num2}');
+ break;
+ case '/':
+ print('The divsion is: ${num1 / num2}');
+ break; 
+ default:
+ print('invalid operator');
+ 
+ }
  }
 
 
 
-}
