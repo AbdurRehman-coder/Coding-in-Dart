@@ -1,19 +1,41 @@
 import 'dart:math';
 import 'dart:io';
-
-void main(){
-String greeting = "Hello";
-
-
-if(
-int.parse(stdin.readLineSync()) > 20
-)
-{
-print('the value is here');
-}else{
-print('it may be in other place');
+// this is the prompt message and will also return
+// a value which is operator in this case.
+String prompt(String promMessage){
+print('the prompt is: ${promMessage}');
+String answer = stdin.readLineSync();
+return answer;
 }
+// Function that will take two values form users
+double myNum(){
+print('Enter your number: ');
+double num = double.parse(stdin.readLineSync());
+return num;
+}
+void main(){
+// Enter two values 
+// input from user through myNum function
+double num1 = myNum();
+double num2 = myNum();
+// different operation performed on operand
+String op = prompt(
+'Enter your operator: ( +,-,/,*)');
 
+// conditional statements for checking the operations
+// which user want to perform
+ if (op == '+'){
+ print('The summation is: ${num1 + num2}');
+ }
+ else if(op == '-'){
+ print('The subtraction is: ${num1 - num2}');
+ }
+ else if(op == '*'){
+ print('The Multiplication is: ${num1 * num2}');
+ }
+ else if(op == '/'){
+ print('The division is: ${num1 / num2}');
+ }
 
 
 
