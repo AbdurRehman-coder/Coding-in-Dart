@@ -1,22 +1,36 @@
-import 'dart:io';
-//show prompt message and also return a 
-// value which take from the user
-String promp(String promptMesssage){
-print(promptMesssage);
-String answer = stdin.readLineSync();
-return answer;
-}
+// Class and Objects and Dart
 
-void main(){
-String name = 'Abid'; // target guessing name
-String guessName = ''; // user guessing name
-int guessCount = 0;  // guessing counting
-// Loop until it match the guess name
-// Loop will run until they both are not matching 
-// if both match than loop will stop
-while( guessName != name ){ 
-guessName = promp('Guess a name?');
-guessCount++;
+// Class name Book
+/* it is just a blue print and a specification of 
+ user define data type... */
+class Book{
+// Constructor of the class
+// it automatically called when object is created.
+// it used for initiliazation
+Book(String aTitle, String aAuthor, int aNoPages){
+this.title = aTitle;
+this.author = aAuthor;
+this.noPages = aNoPages;
+
+print('Constructor call');
 }
-print('Wow! You win in ${guessCount} guesses');
+  String title;
+  String author;
+  int noPages;
+
+
 }
+ 
+ void main(){
+   // Object creation
+   // this is the real world object and do all work
+
+   Book alChemist = Book('Follow Dream', 'paulo coelho', 350); // passing arguments to the constructor
+   /*
+   alChemist.title = "follow your dream:";
+   alChemist.author = 'paulo cohelo';
+   alChemist.noPages = 350;
+*/
+print(alChemist.noPages);
+   
+ }
