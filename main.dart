@@ -1,36 +1,48 @@
-// Class and Objects and Dart
+import 'dart:io';
 
-// Class name Book
-/* it is just a blue print and a specification of 
- user define data type... */
-class Book{
-// Constructor of the class
-// it automatically called when object is created.
-// it used for initiliazation
-Book(String aTitle, String aAuthor, int aNoPages){
-this.title = aTitle;
-this.author = aAuthor;
-this.noPages = aNoPages;
-
-print('Constructor call');
+// Building Quiz App
+class MathQuiz{
+String question;
+double answer;
+MathQuiz(String question, double answer){
+this.question = question;
+this.answer = answer;
 }
-  String title;
-  String author;
-  int noPages;
+}
+// prompt Message and will return a value which
+// entered by the user
+double prompDouble(String prompText){
+print(prompText);
+double userAnswer = double.parse(stdin.readLineSync());
+return userAnswer;
+}
+// main function
+void main(){
+// using List for storing objects
+List<MathQuiz> quest = [
+MathQuiz('3 * 5', 15.0),
+MathQuiz('900 / 30', 30),
+MathQuiz('3 + 14', 17)
+];
+// counter when answered right answer
+int score = 0;
+// for_in loop to iterate through List
+for( MathQuiz values in quest){
+// calling to prompt function and  it return
+// a value, which entered by the user
+double userAns = prompDouble(values.question);
+//check, that answer is right or not
+if(userAns == values.answer ){
+score++;
+}
+}
+// grading on right answer
+print( 'you scored: ${score/quest.length * 100}');
 
+
+/*
+MathQuiz question_1 = MathQuiz('3 * 5', 15.0);
+MathQuiz question_2 = MathQuiz('900 / 30', 30);
+MathQuiz question_3 = MathQuiz('3 + 14', 17);  */
 
 }
- 
- void main(){
-   // Object creation
-   // this is the real world object and do all work
-
-   Book alChemist = Book('Follow Dream', 'paulo coelho', 350); // passing arguments to the constructor
-   /*
-   alChemist.title = "follow your dream:";
-   alChemist.author = 'paulo cohelo';
-   alChemist.noPages = 350;
-*/
-print(alChemist.noPages);
-   
- }
